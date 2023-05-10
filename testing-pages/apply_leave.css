@@ -88,7 +88,8 @@ button {
   height: fit-content;
   border-radius: 0.4em;
   padding: 0.7em 1.25em;
-  background-color: #fff;
+  color: #fff;
+  background-color: var(--blue);
   position: relative;
   transition: transfom 1s ease-in;
 }
@@ -115,10 +116,24 @@ button:is(:hover)::after {
 .btn-container {
   margin-top: auto;
 }
-
 .leave-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+.date-list {
+  display: none;
+  animation: slide-in 500ms ease-in forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 label {
@@ -134,8 +149,8 @@ label {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.food-catagory input{
-	display: block;
+.food-catagory input {
+  display: block;
 }
 
 .leave-list div {
@@ -146,21 +161,20 @@ label {
   display: grid;
   place-items: center;
 }
-.select-all-food{
-	padding-right: 1em;
-	display: grid;
-	place-items:end	;
-	
+.select-all-food {
+  padding-right: 1em;
+  display: grid;
+  place-items: end;
 }
 .check-all {
   appearance: none;
   display: block;
 }
-.check-all:is(:checked)::before{
-	content: 'Deselect All';
+.check-all:is(:checked)::before {
+  content: "Deselect All";
 }
-.check-all:is(:not(:checked))::before{
-	content: 'Select All';
+.check-all:is(:not(:checked))::before {
+  content: "Select All";
 }
 .check-all::before {
   inset: 0;
@@ -172,7 +186,7 @@ label {
 .bold-text {
   padding-right: 7px;
 }
-.submit{
+.submit {
   display: block;
   margin: 1em 1em 0 auto;
 }
