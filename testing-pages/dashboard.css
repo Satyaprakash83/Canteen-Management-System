@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: var(--poppins);
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+li {
+  list-style: none;
+}
+h1,h3{
+  font-variant: small-caps;
+}
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+
+  --light: #f9f9f9;
+  --blue: #3c91e6;
+  --light-blue: #cfe8ff;
+  --grey: #eee;
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #db504a;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+}
+
+
+body.dark {
+  --light: #0c0c1e;
+  --grey: #060714;
+  --dark: #fbfbfb;
+}
+a {
+  text-decoration: none;
+  color: var(--light);
+}
+body {
+  background: var(--grey);
+}
+
+.header{
+    padding-left: 10em;
+    padding-top: 5em;
+}
+.container{
+    padding-left: 9em;
+    padding-top: 1em;
+    display: flex;
+ 
+}
+
+.container li{
+  padding: 1em 4em;
+	background-color: var(--light);
+	display: flex;
+	align-items: center;
+  border-radius: 15px;
+  margin: 1em auto;
+  box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
+}
+.container li .card h3{
+  font-size: 24px;
+	font-weight: 600;
+	color: var(--dark);
+}
+.container li .card p{
+  color: var(--dark);	
+}
+
+.registration{
+  display: flex;
+}
+.registered-members{  
+  display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	color: var(--dark);
+  background-color: var(--light);
+  border-radius: 15px;
+  margin: 3em 4em 0 11em ;
+  box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
+  padding: 0.2em 3em 0.7em 4em;
+  max-width: fit-content;  
+}
+
+.registered-members .head{
+  display: flex;
+	align-items: center;
+	margin-bottom: 0.2em;
+}
+.registered-members .head h3{
+  margin-right: auto;
+	font-size: 24px;
+	font-weight: 600;
+}
+.registered-members table{
+  width: 100%;
+	border-collapse: collapse;
+}
+.registered-members table th{
+  padding-bottom: 12px;
+	font-size: 13px;
+	text-align: left;
+	border-bottom: 1px solid var(--dark);
+}
+.registered-members table td{
+  padding: 0.2em 0;
+}
+.registered-members table tr td:first-child{
+  display: flex;
+	align-items: center;
+}
+.registered-members table tbody tr:hover{
+  background-color: var(--grey);
+}
+.registered-members table tr td .status{
+  font-size: 10px;
+	padding: 6px 16px;
+	background-color: var(--blue);
+  color: var(--light);
+	border-radius: 20px;
+	font-weight: 700;
+}
+.registration-request{  
+  display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	color: var(--dark);
+  background-color: var(--light);
+  border-radius: 15px;
+  margin: 3em 4em 0 11em ;
+  box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
+  padding: 0.2em 3em 0.7em 4em;
+  max-width: fit-content;  
+}
+.registration-request .head-1{
+  display: flex;
+	align-items: center;
+	margin-bottom: 0.2em;
+}
+.registration-request .head-1 h3{
+  margin-right: auto;
+	font-size: 24px;
+	font-weight: 600;
+}
+.registration-request table{
+  width: 100%;
+	border-collapse: collapse;
+}
+.registration-request table th{
+  padding-bottom: 12px;
+	font-size: 13px;
+	text-align:left;
+	border-bottom: 1px solid var(--dark);
+}
+.registration-request table td{
+  padding: 0.2em 0;
+}
+.registration-request table td:first-child{
+  display: flex;
+	align-items: center;
+}
+.registration-request table tbody tr:hover{
+  background-color: var(--grey);
+}
+.registration-request table tbody tr td button{
+  border: none;
+  cursor: pointer;
+
+}
+.registration-request table tbody tr td .accept-request{
+  font-size: 10px;
+	padding: 6px 16px;
+	background-color: var(--blue);
+  border-radius: 0.5em;
+	font-weight: 700;
+}
+.registration-request table tbody tr td .decline-request{
+  font-size: 10px;
+	padding: 6px 16px;
+	background-color: var(--red);
+  border-radius:0.5em;
+	font-weight: 700;
+}
