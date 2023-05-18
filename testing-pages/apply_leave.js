@@ -3,24 +3,31 @@ const allBreakfast = document.querySelector(".all-breakfast");
 const allLunch = document.querySelector(".all-lunch");
 const allDinner = document.querySelector(".all-dinner");
 
+document.querySelectorAll(".date-inputs input").forEach((element) => {
+  element.setAttribute(min, new Date());
+});
+
 selectAll.addEventListener("click", () => {
   const checkBoxes = document.querySelectorAll('form input[type="checkbox"]');
   checkBoxes.forEach((element) => {
     element.checked = selectAll.checked;
   });
 });
+
 allBreakfast.addEventListener("click", () => {
   const checkBoxes = document.querySelectorAll(".breakfast");
   checkBoxes.forEach((element) => {
     element.checked = allBreakfast.checked;
   });
 });
+
 allLunch.addEventListener("click", () => {
   const checkBoxes = document.querySelectorAll(".lunch");
   checkBoxes.forEach((element) => {
     element.checked = allLunch.checked;
   });
 });
+
 allDinner.addEventListener("click", () => {
   const checkBoxes = document.querySelectorAll(".dinner");
   checkBoxes.forEach((element) => {
@@ -32,21 +39,26 @@ allDinner.addEventListener("click", () => {
 const dayListBtn = document.getElementById("generate_day_list");
 dayListBtn.addEventListener("click", () => {
   [fromDate, toDate] = [...document.querySelectorAll(".date-inputs input")].map(
-    (element) => element.value
-  );
-  const diff = Math.floor(
-    (Date.parse(toDate) - Date.parse(fromDate)) / 86400000
+    (element) => Date.parse(element.value)
   );
 
+  const diff = Math.floor((toDate - fromDate) / 86400000);
+
   const listContainer = document.querySelector(".leave-list");
-  for (let i = 1; i <= diff; i++) {
-    const element = `<label for="row-${i}">Lorem, ipsum.</label>
+  for (let i = 0; i <= diff; i++) {
+    const date = new Date(fromDate + i * 86400000);
+    const element = `<label for="row-${i}">${date.getDate()}-${
+      date.getMonth() + 1
+    }-${date.getFullYear()}</label>
         <div class="leave-day-preference" id="row-${i}">
         <input type="checkbox" class="breakfast" id="" />
         <input type="checkbox" class="lunch" id="" />
         <input type="checkbox" class="dinner" id="" />
       </div>`;
-    listContainer.innerHTML += element;
+    listContainer.append(
+      ...new DOMParser().parseFromString(element, "text/html").body.childNodes
+    );
+    console.log();
     document.querySelector(".date-list").style.display = "block";
   }
 });
@@ -61,8 +73,18 @@ submitBtn.addEventListener("click", () => {
     return 0;
   });
 
-  const leaveList = [];
-  for (let index = 3; index <= formdata.length; index += 3) {
-    leaveList.push(formdata.slice(index - 3, index));
+  //Fetching from and to date form the leave application
+  [fromDate, toDate] = [...document.querySelectorAll(".date-inputs input")].map(
+    (element) => Date.parse(element.value)
+  );
+
+  const leaveList = {};
+  for (let index = 3, i = 0; index <= formdata.length; index += 3, i++) {
+    const date = new Date(fromDate + i * 86400000);
+    leaveList[
+      `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
+    ] = formdata.slice(index - 3, index);
   }
+
+  console.log(JSON.stringify(leaveList));
 });
