@@ -10,11 +10,11 @@ body {
   padding: 0;
 }
 
-
 li {
   list-style: none;
 }
-h1,h3{
+h1,
+h3 {
   font-variant: small-caps;
 }
 :root {
@@ -34,7 +34,6 @@ h1,h3{
   --light-orange: #ffe0d3;
 }
 
-
 body.dark {
   --light: #0c0c1e;
   --grey: #060714;
@@ -48,147 +47,147 @@ body {
   background: var(--grey);
 }
 
-.header{
-    padding-left: 10em;
-    padding-top: 5em;
+.header {
+  padding-left: 10em;
+  padding-top: 5em;
 }
-.container{
-    padding-left: 9em;
-    padding-top: 1em;
-    display: flex;
- 
+.container {
+  padding-left: 9em;
+  padding-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.container li{
+.container li {
   padding: 1em 4em;
-	background-color: var(--light);
-	display: flex;
-	align-items: center;
+  background-color: var(--light);
+  display: flex;
+  align-items: center;
   border-radius: 15px;
   margin: 1em auto;
   box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
 }
-.container li .card h3{
+.container li .card h3 {
   font-size: 24px;
-	font-weight: 600;
-	color: var(--dark);
+  font-weight: 600;
+  color: var(--dark);
 }
-.container li .card p{
-  color: var(--dark);	
+.container li .card p {
+  color: var(--dark);
 }
 
-.registration{
+.registration {
   display: flex;
+  flex-wrap: wrap;
 }
-.registered-members{  
+.registered-members {
   display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	color: var(--dark);
+  flex-wrap: wrap;
+  width: 100%;
+  color: var(--dark);
   background-color: var(--light);
   border-radius: 15px;
-  margin: 3em 4em 0 11em ;
+  margin: 3em 4em 0 11em;
   box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
   padding: 0.2em 3em 0.7em 4em;
-  max-width: fit-content;  
+  max-width: fit-content;
 }
 
-.registered-members .head{
+.registered-members .head {
   display: flex;
-	align-items: center;
-	margin-bottom: 0.2em;
+  align-items: center;
+  margin-bottom: 0.2em;
 }
-.registered-members .head h3{
+.registered-members .head h3 {
   margin-right: auto;
-	font-size: 24px;
-	font-weight: 600;
+  font-size: 24px;
+  font-weight: 600;
 }
-.registered-members table{
+.registered-members table {
   width: 100%;
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
-.registered-members table th{
+.registered-members table th {
   padding-bottom: 12px;
-	font-size: 13px;
-	text-align: left;
-	border-bottom: 1px solid var(--dark);
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--dark);
 }
-.registered-members table td{
+.registered-members table td {
   padding: 0.2em 0;
 }
-.registered-members table tr td:first-child{
+.registered-members table tr td:first-child {
   display: flex;
-	align-items: center;
+  align-items: center;
 }
-.registered-members table tbody tr:hover{
+.registered-members table tbody tr:hover {
   background-color: var(--grey);
 }
-.registered-members table tr td .status{
+.registered-members table tr td .status {
   font-size: 10px;
-	padding: 6px 16px;
-	background-color: var(--blue);
+  padding: 6px 16px;
+  background-color: var(--blue);
   color: var(--light);
-	border-radius: 20px;
-	font-weight: 700;
+  border-radius: 20px;
+  font-weight: 700;
 }
-.registration-request{  
+.registration-request {
   display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	color: var(--dark);
+  flex-wrap: wrap;
+  width: 100%;
+  color: var(--dark);
   background-color: var(--light);
   border-radius: 15px;
-  margin: 3em 4em 0 11em ;
+  margin: 3em 4em 0 11em;
   box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
   padding: 0.2em 3em 0.7em 4em;
-  max-width: fit-content;  
+  max-width: fit-content;
 }
-.registration-request .head-1{
+.registration-request .head-1 {
   display: flex;
-	align-items: center;
-	margin-bottom: 0.2em;
+  align-items: center;
+  margin-bottom: 0.2em;
 }
-.registration-request .head-1 h3{
+.registration-request .head-1 h3 {
   margin-right: auto;
-	font-size: 24px;
-	font-weight: 600;
+  font-size: 24px;
+  font-weight: 600;
 }
-.registration-request table{
+.registration-request table {
   width: 100%;
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
-.registration-request table th{
+.registration-request table th {
   padding-bottom: 12px;
-	font-size: 13px;
-	text-align:left;
-	border-bottom: 1px solid var(--dark);
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--dark);
 }
-.registration-request table td{
+.registration-request table td {
   padding: 0.2em 0;
 }
-.registration-request table td:first-child{
+.registration-request table td:first-child {
   display: flex;
-	align-items: center;
+  align-items: center;
 }
-.registration-request table tbody tr:hover{
+.registration-request table tbody tr:hover {
   background-color: var(--grey);
 }
-.registration-request table tbody tr td button{
+.registration-request table tbody tr td button {
   border: none;
   cursor: pointer;
-
 }
-.registration-request table tbody tr td .accept-request{
+.registration-request table tbody tr td .accept-request {
   font-size: 10px;
-	padding: 6px 16px;
-	background-color: var(--blue);
+  padding: 6px 16px;
+  background-color: var(--blue);
   border-radius: 0.5em;
-	font-weight: 700;
+  font-weight: 700;
 }
-.registration-request table tbody tr td .decline-request{
+.registration-request table tbody tr td .decline-request {
   font-size: 10px;
-	padding: 6px 16px;
-	background-color: var(--red);
-  border-radius:0.5em;
-	font-weight: 700;
+  padding: 6px 16px;
+  background-color: var(--red);
+  border-radius: 0.5em;
+  font-weight: 700;
 }

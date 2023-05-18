@@ -59,11 +59,15 @@ h2 {
   margin: 2em auto;
   box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
   padding: 2em;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
   max-width: fit-content;
 }
 
 .date-inputs {
   display: flex;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   gap: 1rem;
   flex-wrap: wrap;
@@ -85,6 +89,8 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   border-radius: 0.4em;
   padding: 0.7em 1.25em;
@@ -122,7 +128,19 @@ button:is(:hover)::after {
 }
 .date-list {
   display: none;
+  -webkit-animation: slide-in 500ms ease-in forwards;
   animation: slide-in 500ms ease-in forwards;
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slide-in {
@@ -167,6 +185,8 @@ label {
   place-items: end;
 }
 .check-all {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   display: block;
 }
