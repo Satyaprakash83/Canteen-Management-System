@@ -63,7 +63,6 @@ dayListBtn.addEventListener("click", () => {
     listContainer.append(
       ...new DOMParser().parseFromString(element, "text/html").body.childNodes
     );
-    console.log();
     document.querySelector(".date-list").style.display = "block";
   }
 });

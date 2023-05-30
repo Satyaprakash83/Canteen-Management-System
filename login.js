@@ -13,31 +13,34 @@ function login() {
   y.style.left = "450px";
   z.style.left = "0px";
 }
-document.getElementById('registerBtn').addEventListener('click', ()=>{
-    let check = document.getElementById("pass").value;
+
+document.getElementById("registerBtn").addEventListener("click", (event) => {
+  let check = document.getElementById("pass").value;
   let recheck = document.getElementById("pass1").value;
-  if (check === "") {
-    document.getElementById("message").innerText = "**Please Fill Password";
-    return;
-  }
+
   if (check.length < 8) {
     document.getElementById("message").innerText =
       "**Password length must be greater than 8 characters";
+    event.preventDefault();
   }
 
   if (check !== recheck) {
     document.getElementById("message").innerText =
       "**Password and confirm password are not same";
+    event.preventDefault();
   }
-})
+});
 
-$('#registerBtn').click(()=>{
-    const id = $('#registerId').val();
-    const password = $('#registerId').val();
+$("#registerBtn").click(() => {
+  const id = $("#registerId").val();
+  const name = $("#registerName").val();
+  const password = $("#pass").val();
+  const email = $("#email").val();
+  const userType = $("#user_type").val();
 
-    $.post('register.php', {id, password}, (data)=>{
-        if(data === 'inserted'){
-            location.href ='./adminhub-master/index.html';
-        }
-    })
-})
+  $.post("./register.php", { id, name, password, email, userType }, (data) => {
+    if (data === "inserted") {
+      location.href = "./login.php";
+    }
+  });
+});
