@@ -113,7 +113,7 @@ require_once './_partials/_loginCheck.php';
 
 		<!-- MAIN -->
 		<main>
-			<iframe src="./dashboard.html" class="frame" name="frame" frameborder="0" sandbox="allow-scripts allow-same-origin"></iframe>
+			<iframe src="./dashboard.php" class="frame" name="frame" frameborder="0" sandbox="allow-scripts allow-same-origin"></iframe>
 		</main>
 		<!-- MAIN -->
 	</section>
