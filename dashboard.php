@@ -12,6 +12,7 @@ include "./_partials/_connect.php";
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -87,7 +88,7 @@ include "./_partials/_connect.php";
             <div class="head-1">
                 <h3>Registration Request</h3>
             </div>
-            <table>
+            <table id="registrationRequests">
                 <?php
                 $qry = "SELECT * FROM `registration_requests`";
                 $res = mysqli_query($connection, $qry);
@@ -120,13 +121,14 @@ include "./_partials/_connect.php";
                     ?>
             </table>
             <?php
-                    } else {
-                        echo "<h3> No Registration Request is Available</h3>";
                     }
             ?>
 
         </div>
     </div>
+
+    
+
 </body>
 
 </html>

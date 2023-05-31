@@ -1,5 +1,5 @@
 <?php
-require_once './_partials/_loginCheck.php';
+// require_once './_partials/_loginCheck.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +17,7 @@ require_once './_partials/_loginCheck.php';
 	<script src="./jQuery/jquery-3.7.0.js"></script>
 	<!-- My JS -->
 	<script src="script.js" defer></script>
+
 
 	<title>AdminHub</title>
 </head>
@@ -39,13 +40,13 @@ require_once './_partials/_loginCheck.php';
 			</li>
 			<li>
 				<a href="./apply_leave.html" target="frame">
-					<i class='bx bxs-shopping-bag-alt'></i>
+					<i class='bx bxs-notepad'></i>
 					<span class="text">Leave Apply</span>
 				</a>
 			</li>
 			<li>
 				<a href="./food_pref.html" target="frame">
-					<i class='bx bxs-bowl-hot'></i>
+					<i class='bx bx-food-tag'></i>
 					<span class="text">Food Preference</span>
 				</a>
 			</li>

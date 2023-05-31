@@ -49,11 +49,11 @@ body {
 
 .header {
   padding-left: 5em;
-  padding-top: 2em;
+  /* padding-top: 2em; */
 }
 .container {
   padding-left: 2em;
-  padding-top: 1em;
+  padding-top: 0.2em;
   display: flex;
   flex-wrap: wrap;
 }
@@ -103,10 +103,11 @@ body {
   font-size: 24px;
   font-weight: 600;
 }
-.registered-members table {
+ .registered-members table {
   width: 100%;
   border-collapse: collapse;
 }
+
 .registered-members table th {
   padding-bottom: 12px;
   font-size: 13px;
@@ -132,7 +133,6 @@ body {
   font-weight: 700;
 }
 .registration-request {
-  /* display: flex; */
   flex-wrap: wrap;
   width: 100%;
   color: var(--dark);
@@ -176,7 +176,7 @@ body {
 .registration-request table tbody tr td button {
   border: none;
   cursor: pointer;
-}
+} 
 .registration-request table tbody tr td .accept-request {
   font-size: 10px;
   padding: 6px 16px;
