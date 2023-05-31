@@ -112,7 +112,7 @@ include "./_partials/_connect.php";
                                 </td>
                                 <td><?php echo $data['user_id']; ?></td>
                                 <td><button type="submit" class="accept-request"><a href="#">Accept</a></button>
-                                    <button type="submit" class="decline-request"><a href="#">Decline</a></button>
+                                    <button type="submit" class="decline-request"><a href="./_dashboardphp/requestDelete.php?user_id=<?php echo $data['user_id'];?>">Decline</a></button>
                                 </td>
                             </tr>
                         </tbody>
