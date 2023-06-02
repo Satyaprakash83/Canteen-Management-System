@@ -45,8 +45,14 @@
 				</a>
 			</li>
 			<li>
-				<a href="./food_pref.html" target="frame">
+				<a href="./add_food_item.html" target="frame">
 					<i class='bx bx-food-tag'></i>
+					<span class="text">Add Food Item</span>
+				</a>
+			</li>
+			<li>
+				<a href="./food_pref.html" target="frame">
+					<i class='bx bxs-pizza'></i>
 					<span class="text">Food Preference</span>
 				</a>
 			</li>
