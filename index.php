@@ -120,10 +120,6 @@
 	</section>
 	<!-- CONTENT -->
 
-	<script>
-		console.log($);
-	</script>
-
 </body>
 
 </html>

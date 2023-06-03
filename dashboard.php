@@ -111,7 +111,7 @@ include "./_partials/_connect.php";
                                     <p><?php echo $data['user_name']; ?></p>
                                 </td>
                                 <td><?php echo $data['user_id']; ?></td>
-                                <td><button type="submit" class="accept-request"><a href="#">Accept</a></button>
+                                <td><button type="submit" class="accept-request"><a href="./_dashboardphp/verify.php?id=<?php echo $data['user_id']; ?>">Accept</a></button>
                                     <button type="submit" class="decline-request"><a href="#">Decline</a></button>
                                 </td>
                             </tr>
@@ -120,14 +120,14 @@ include "./_partials/_connect.php";
                     }
                     ?>
             </table>
-            <?php
-                    }
-            ?>
+        <?php
+                }
+        ?>
 
         </div>
     </div>
 
-    
+
 
 </body>
 
