@@ -78,7 +78,7 @@ body {
 
 .registration {
   display: inline-flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 .registered-members {
   /* display: flex; */

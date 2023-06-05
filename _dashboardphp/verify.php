@@ -5,39 +5,54 @@ require_once "./../_partials/_connect.php";
 
 $query = "SELECT * FROM `registration_requests` WHERE user_id = '$id'";
 
-$result = mysqli_fetch_assoc(mysqli_query($connection, $query));
+$requestResults = mysqli_fetch_assoc(mysqli_query($connection, $query));
 
 
 
-if ($result['user_type'] === 'STUDENT') {
+if ($requestResults['user_type'] === 'STUDENT') {
     $query = "SELECT * FROM `student_view` WHERE student_id = '$id'";
 }
 
-if ($result['user_type'] === 'FACULTY') {
+if ($requestResults['user_type'] === 'FACULTY') {
     $query = "SELECT * FROM `faculty_view` WHERE faculty_id = '$id'";
 }
 
 $memberData = mysqli_fetch_assoc(mysqli_query($connection, $query));
 
 if ($memberData !== null) {
-    foreach ($result as $key => $value) {
-        if ($result["$key"] !== $memberData["$key"]) {
-            header('location:./../requestDelete.php?user_id=$id');
-        }
+
+    switch ($requestResults['user_type']) {
+        case 'STUDENT':
+            $userid = $memberData['student_id'];
+            $username = $memberData['student_name'];
+            $useremail = $memberData['student_email'];
+            break;
+        case 'FACULTY':
+            $userid = $memberData['faculty_id'];
+            $username = $memberData['faculty_name'];
+            $useremail = $memberData['faculty_email'];
+            break;
     }
 
-    $id = $result['user_id'];
-    $name = $result['user_name'];
-    $password = $result['user_password'];
-    $user_type = $result['user_type'];
+    if (
+        $requestResults["user_id"] !== $userid
+        || $requestResults["user_name"] !== $username
+        || $requestResults["user_email"] !== $useremail
+    ) {
+        header("location:./requestDelete.php?id=$id");
+        die();
+    }
+
+
+    $id = $requestResults['user_id'];
+    $name = $requestResults['user_name'];
+    $password = $requestResults['user_password'];
+    $user_type = $requestResults['user_type'];
 
     $query = "INSERT INTO `user_information` (`user_id`, `user_name`, `user_password`, `user_type`) VALUES ('$id', '$name', '$password', '$user_type')";
     mysqli_query($connection, $query);
 }
-// echo "<pre>";
-// print_r($memberData);
-// echo "</pre>";
 
 
 
-header('location:./../requestDelete.php?user_id=$id');
+header("location:./requestDelete.php?id=$id");

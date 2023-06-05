@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: var(--poppins);
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+
+  --light: #f9f9f9;
+  --blue: #3c91e6;
+  --light-blue: #cfe8ff;
+  --grey: #eee;
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #db504a;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+}
+
+.bold-text {
+  font-weight: 650;
+}
+body.dark {
+  --light: #0c0c1e;
+  --grey: #060714;
+  --dark: #fbfbfb;
+}
+
+body {
+  background: var(--grey);
+}
+h1{
+    font-variant: small-caps;
+}
+header,main{
+  padding-left: 4em;
+}
+.add_food{
+  background-color: var(--light);
+  border-radius: 15px;
+  margin: 2em 0;
+  box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
+  height: 10em;
+  display: block;
+}
+.inputFood{
+  padding: 5px;
+  margin: 20px;
+}
+.label{
+  margin-left: 2em;
+  font-weight: 300;
+  font-size: large;
+
+}
+input[type="text"] {
+  padding: 0.7em 1em;
+  margin-inline: 2.5em;
+  outline: none;
+  border: none;
+
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: fit-content;
+  border-radius: 0.4em;
+  padding: 0.7em 1.25em;
+  color: #fff;
+  background-color: var(--blue);
+  position: relative;
+  transition: transfom 1s ease-in;
+  margin:2em;
+}
+button:hover {
+  transition: transfom 1s ease-in;
+  transform: translateY(-2px) scale(1.03);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border-radius: inherit;
+  box-shadow: 3px 3px 5px hsl(0, 0%, 70%);
+  opacity: 0;
+  transition: opacity 150ms ease-in, transfom 500ms ease-in;
+}
+table{
+  width: 30%;
+  border: 1px solid black;
+
+}
+td{
+  text-align: center;
+}
+

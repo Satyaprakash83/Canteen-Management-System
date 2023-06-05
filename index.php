@@ -1,5 +1,5 @@
 <?php
-// require_once './_partials/_loginCheck.php';
+require_once './_partials/_loginCheck.php';
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="dashboard.html" target="frame">
+				<a href="dashboard.php" target="frame">
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Dashboard</span>
 				</a>
@@ -45,8 +45,14 @@
 				</a>
 			</li>
 			<li>
-				<a href="./food_pref.html" target="frame">
+				<a href="./add_food_item.html" target="frame">
 					<i class='bx bx-food-tag'></i>
+					<span class="text">Add Food Item</span>
+				</a>
+			</li>
+			<li>
+				<a href="./food_pref.html" target="frame">
+					<i class='bx bxs-pizza'></i>
 					<span class="text">Food Preference</span>
 				</a>
 			</li>
@@ -77,7 +83,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#" class="logout">
+				<a href="./logout.php" class="logout">
 					<i class='bx bxs-log-out-circle'></i>
 					<span class="text">Logout</span>
 				</a>

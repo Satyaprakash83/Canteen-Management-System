@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add food</title>
+    <link rel="stylesheet" href="./add_food_item.css">
+    <script src="./jQuery/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Add Food Item</h1>
+    </header>
+    <main class="container">
+        <div class="add_food">
+            <div class="label">Add Food Item:</div>
+            <input type="text" id="input-food" placeholder="Enter a Food Item" class="inputFood" >
+            <button type="submit">Add</button>
+        </div>
+        <div class="status"></div>
+        <div class="foodTable">
+        <table border="1"  cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Food Id</th>
+                    <th>Food Name</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    </main>
+    <script>
+        $("button").click(() => {
+            const addFood = $('#input-food').val();
+       
+
+        $.post("./_addFoodphp/add_food.php",{addFood},(data,status) => {
+            $(".status").text(data);
+        });
+        $("#input-food").val("");
+    });
+        $.post("./_addFoodphp/show_food.php",(data,status)=>{
+            data=JSON.parse(data);
+            let rows = "";
+            data.forEach(({food_id,food_name}) => {
+                rows += `<tbody>
+                        <tr>
+                            <td>${food_id}</td>
+                            <td>${food_name}</td>
+                        </tr>
+                    </tbody>`;
+            });
+            $("table").append(rows);
+
+        });
+
+    </script>
+</body>
+</html>
