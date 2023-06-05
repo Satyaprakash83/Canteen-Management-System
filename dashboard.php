@@ -40,50 +40,64 @@ include "./_partials/_connect.php";
         </li>
     </ul>
     <div class="registration">
-        <div class="registered-members">
-            <div class="head">
-                <h3>Registered Members</h3>
+        <?php
+        $qry = "SELECT * from `user_information` limit 5";
+        $result = mysqli_query($connection, $qry);
+        if (mysqli_num_rows($result) > 0) {
+        ?>
+
+            <div class="registered-members">
+                <div class="head">
+                    <h3>Registered Members</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Member-Id</th>
+                            <th>Member-Name</th>
+                            <th>Member-type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        while ($data = mysqli_fetch_assoc($result)) {
+                        ?>
+                            <tr>
+                                <td>
+                                    <p><?php echo $data['user_id'] ?></p>
+                                </td>
+                                <td><?php echo $data['user_name'] ?></td>
+                                <td> <?php if ($data['user_type'] == 'STUDENT') {
+                                        ?>
+                                        <button type="button" class="status"><?php echo $data['user_type'] ?></button>
+                                    <?php
+                                        } else {
+                                    ?>
+                                        <button type="button" class="status"><?php echo $data['user_type'] ?></button>
+                                    <?php
+
+                                        }
+
+                                    ?>
+
+                                </td>
+                            </tr>
+
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Registration- Date</th>
-                        <th>Member-type</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <p>Jhon Doe</p>
-                        </td>
-                        <td>10-9-2022</td>
-                        <td><span class="status"> Student</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Jhon Doe</p>
-                        </td>
-                        <td>10-9-2022</td>
-                        <td><span class="status">Staff</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Jhon Doe</p>
-                        </td>
-                        <td>10-9-2022</td>
-                        <td><span class="status">Student</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Jhon Doe</p>
-                        </td>
-                        <td>10-9-2022</td>
-                        <td><span class="status">Staff</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <?php
+        } else {
+            echo "<h2>No Member are Registered</h2>";
+        }
+        ?>
+
+
+
+
         <div class="registration-request">
             <div class="head-1">
                 <h3>Registration Request</h3>
@@ -127,6 +141,13 @@ include "./_partials/_connect.php";
         </div>
     </div>
 
+    <script>
+        const memberTypes = document.querySelectorAll('.status');
+        memberTypes.forEach(element => {
+            if (element.textContent === "STUDENT") element.style.backgroundColor = '#3c91e6';
+            if (element.textContent === "FACULTY") element.style.backgroundColor = 'orangered';
+        })
+    </script>
 
 
 </body>
