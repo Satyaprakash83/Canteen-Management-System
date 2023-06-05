@@ -10,6 +10,11 @@ include "./_partials/_connect.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <!-- Latest compiled and minified CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+ <!-- Latest compiled JavaScript -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -40,50 +45,64 @@ include "./_partials/_connect.php";
         </li>
     </ul>
     <div class="registration">
-        <div class="registered-members">
-            <div class="head">
-                <h3>Registered Members</h3>
+        <?php
+        $qry = "SELECT * from `member_information` limit 5";
+        $result = mysqli_query($connection, $qry);
+        if (mysqli_num_rows($result) > 0) {
+        ?>
+
+            <div class="registered-members">
+                <div class="head">
+                    <h3>Registered Members</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Member-Id</th>
+                            <th>Member-Name</th>
+                            <th>Member-type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        while ($data = mysqli_fetch_assoc($result)) {
+                        ?>
+                            <tr>
+                                <td>
+                                    <p><?php echo $data['member_id'] ?></p>
+                                </td>
+                                <td><?php echo $data['member_name'] ?></td>
+                                <td> <?php if($data['member_catagory'] == 'STUDENT'){
+                                    ?>  
+                                    <button type="button" class="btn btn-primary status"><?php echo $data['member_catagory'] ?></button>
+                                    <?php
+                                      }else{
+                                        ?>
+                                         <button type="button" class="btn btn-danger status"><?php echo $data['member_catagory'] ?></button>
+                                        <?php
+
+                                      }
+                                
+                                ?>
+                                    
+                                </td>
+                            </tr>
+
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Registration- Date</th>
-                        <th>Member-type</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <p>Jhon Doe</p>
-                        </td>
-                        <td>10-9-2022</td>
-                        <td><span class="status"> Student</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Jhon Doe</p>
-                        </td>
-                        <td>10-9-2022</td>
-                        <td><span class="status">Staff</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Jhon Doe</p>
-                        </td>
-                        <td>10-9-2022</td>
-                        <td><span class="status">Student</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Jhon Doe</p>
-                        </td>
-                        <td>10-9-2022</td>
-                        <td><span class="status">Staff</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <?php
+        } else {
+            echo "<h2>No Member are Registered</h2>";
+        }
+        ?>
+
+
+
+
         <div class="registration-request">
             <div class="head-1">
                 <h3>Registration Request</h3>
@@ -112,7 +131,7 @@ include "./_partials/_connect.php";
                                 </td>
                                 <td><?php echo $data['user_id']; ?></td>
                                 <td><button type="submit" class="accept-request"><a href="#">Accept</a></button>
-                                    <button type="submit" class="decline-request"><a href="./_dashboardphp/requestDelete.php?user_id=<?php echo $data['user_id'];?>">Decline</a></button>
+                                    <button type="submit" class="decline-request"><a href="./_dashboardphp/requestDelete.php?user_id=<?php echo $data['user_id']; ?>">Decline</a></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -120,14 +139,14 @@ include "./_partials/_connect.php";
                     }
                     ?>
             </table>
-            <?php
-                    }
-            ?>
+        <?php
+                }
+        ?>
 
         </div>
     </div>
 
-    
+
 
 </body>
 

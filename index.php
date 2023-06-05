@@ -29,7 +29,7 @@
 	<section id="sidebar">
 		<a href="#" class="brand">
 			<i class='bx bxs-smile'></i>
-			<span class="text">AdminHub</span>
+			<span class="text">Canteen</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
@@ -100,7 +100,7 @@
 		<nav>
 			<i class='bx bx-menu'></i>
 			<a href="#" class="nav-link">Categories</a>
-			<form action="#">
+			<!-- <form action="#">
 				<div class="form-input">
 					<input type="search" placeholder="Search...">
 					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
@@ -114,7 +114,7 @@
 			</a>
 			<a href="#" class="profile">
 				<img src="img/people.png">
-			</a>
+			</a> -->
 		</nav>
 		<!-- NAVBAR -->
 

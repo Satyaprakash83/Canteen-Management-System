@@ -44,7 +44,7 @@ a {
   color: var(--light);
 }
 body {
-  background: var(--grey);
+  background-color: var(--grey);
 }
 
 .header {
@@ -66,14 +66,17 @@ body {
   border-radius: 15px;
   margin:  0 auto;
   box-shadow: 5px 5px 1rem hsl(0, 0%, 70%);
+
 }
 .container li .card h3 {
   font-size: 24px;
   font-weight: 600;
   color: var(--dark);
+  background-color: var(--light);
 }
 .container li .card p {
   color: var(--dark);
+  background-color: var(--light);
 }
 
 .registration {
@@ -127,7 +130,7 @@ body {
 .registered-members table tr td .status {
   font-size: 10px;
   padding: 6px 16px;
-  background-color: var(--blue);
+  /* background-color: var(--blue); */
   color: var(--light);
   border-radius: 20px;
   font-weight: 700;
@@ -190,4 +193,8 @@ body {
   background-color: var(--red);
   border-radius: 0.5em;
   font-weight: 700;
+}
+.registration-request table tbody tr td button a{
+  text-decoration: none;
+  color: var(--light);
 }
