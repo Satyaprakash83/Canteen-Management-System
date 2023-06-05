@@ -32,43 +32,43 @@ require_once './_partials/_loginCheck.php';
 			<span class="text">AdminHub</span>
 		</a>
 		<ul class="side-menu top">
-			<li class="active">
+			<li class="active" title="Dashboard">
 				<a href="dashboard.php" target="frame">
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Dashboard</span>
 				</a>
 			</li>
-			<li>
+			<li title="Leave Apply">
 				<a href="./apply_leave.html" target="frame">
 					<i class='bx bxs-notepad'></i>
 					<span class="text">Leave Apply</span>
 				</a>
 			</li>
-			<li>
+			<li title="Add Food Item">
 				<a href="./add_food_item.html" target="frame">
 					<i class='bx bx-food-tag'></i>
 					<span class="text">Add Food Item</span>
 				</a>
 			</li>
-			<li>
+			<li title="Food Preference">
 				<a href="./food_pref.html" target="frame">
 					<i class='bx bxs-pizza'></i>
 					<span class="text">Food Preference</span>
 				</a>
 			</li>
-			<li>
+			<li title="Analytics">
 				<a href="#" target="frame">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Analytics</span>
 				</a>
 			</li>
-			<li>
+			<li title="Message">
 				<a href="#" target="frame">
 					<i class='bx bxs-message-dots'></i>
 					<span class="text">Message</span>
 				</a>
 			</li>
-			<li>
+			<li title="Team">
 				<a href="./teams_page.html" target="frame">
 					<i class='bx bxs-group'></i>
 					<span class="text">Team</span>
@@ -76,13 +76,13 @@ require_once './_partials/_loginCheck.php';
 			</li>
 		</ul>
 		<ul class="side-menu">
-			<li>
+			<li title="Settings">
 				<a href="#">
 					<i class='bx bxs-cog'></i>
 					<span class="text">Settings</span>
 				</a>
 			</li>
-			<li>
+			<li title="Logout">
 				<a href="./logout.php" class="logout">
 					<i class='bx bxs-log-out-circle'></i>
 					<span class="text">Logout</span>
@@ -99,7 +99,7 @@ require_once './_partials/_loginCheck.php';
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu'></i>
-			<a href="#" class="nav-link">Categories</a>
+			<a href="#" class="nav-link"></a>
 			<form action="#">
 				<div class="form-input">
 					<input type="search" placeholder="Search...">

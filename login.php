@@ -73,8 +73,6 @@
 
   switch ($_POST['user_type']) {
     case 'STUDENT':
-      $query = "SELECT * FROM user_information WHERE user_id = '$id' && user_password = '$password'";
-      break;
     case 'FACULTY':
       $query = "SELECT * FROM user_information WHERE user_id = '$id' && user_password = '$password'";
       break;
