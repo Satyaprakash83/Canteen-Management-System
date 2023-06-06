@@ -8,7 +8,8 @@ document.querySelectorAll(".date-inputs input").forEach((element) => {
   const currentDate =
     `${date.getFullYear()}-` +
     `${date.getMonth() + 1}`.padStart(2, "0") +
-    `-${date.getDate()}`;
+    "-" +
+    `${date.getDate()}`.padStart(2, "0");
   element.setAttribute("min", currentDate);
 });
 

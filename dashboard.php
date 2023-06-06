@@ -144,7 +144,7 @@ include "./_partials/_connect.php";
     <script>
         const memberTypes = document.querySelectorAll('.status');
         memberTypes.forEach(element => {
-            if (element.textContent === "STUDENT") element.style.backgroundColor = '#3c91e6';
+            if (element.textContent === "STUDENT") element.style.backgroundColor = '#0080ff';
             if (element.textContent === "FACULTY") element.style.backgroundColor = 'orangered';
         })
     </script>

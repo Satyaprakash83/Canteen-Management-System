@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>add food</title>
-    <link rel="stylesheet" href="./add_food_item.css" />
-    <script src="./jQuery/jquery-3.7.0.js"></script>
-    <!-- links for datatable -->
-    <link rel="stylesheet" href="./DataTables/datatables.min.css">
-    <script src="./DataTables/datatables.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Add Food Item</h1>
-      <div class="form-group">
-        <label for="food-item">Food Item:</label>
-        <input type="text" id="food-item" placeholder="Enter food item" />
-      </div>
-      <button id="add-button">Add</button>
-    </div>
-    <div class="status"></div>
-    <div class="foodTable">
-      <table border="1" rules="all" cellpadding="10" id="myTable">
-        <thead>
-          <tr>
-            <th>Food Id</th>
-            <th>Food Name</th>
-          </tr>
-        </thead>
-        <tbody>
 
-        </tbody>
-      </table>
-    </div>
-    <script>
-      $("button").click(() => {
-        const addFood = $("#food-item").val();
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>add food</title>
+  <link rel="stylesheet" href="./add_food_item.css" />
+  <script src="./jQuery/jquery-3.7.0.js"></script>
+  <!-- Datatable -->
+  <link rel="stylesheet" href="./DataTables/datatables.min.css">
+  <script src="./DataTables/datatables.min.js"></script>
+</head>
 
-        $.post("./_addFoodphp/add_food.php", { addFood }, (data, status) => {
-          $(".status").text(data);
-        });
-        $("#food-item").val("");
+<body>
+  <div class="container">
+    <h1>Add Food Item</h1>
+    <div class="form-group">
+      <label for="food-item">Food Item:</label>
+      <input type="text" id="food-item" placeholder="Enter food item" />
+    </div>
+    <button id="add-button">Add</button>
+  </div>
+  <div class="status"></div>
+  <div class="foodTable">
+    <table border="1" rules="all" cellpadding="10" id="myTable">
+      <thead>
+        <tr>
+          <th>Food Id</th>
+          <th>Food Name</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <script>
+    $("button").click(() => {
+      const addFood = $("#food-item").val();
+
+      $.post("./_addFoodphp/add_food.php", { addFood }, (data, status) => {
+        $(".status").text(data);
       });
-      $.post("./_addFoodphp/show_food.php", (data, status) => {
-        data = JSON.parse(data);
-        console.log(data);
-        let rows = "";
-        data.forEach(({ food_id, food_name }) => {
-          rows += `<tr>
+      $("#food-item").val("");
+    });
+    $.post("./_addFoodphp/show_food.php", (data, status) => {
+      data = JSON.parse(data);
+      let rows = "";
+      data.forEach(({ food_id, food_name }) => {
+        rows += `<tr>
                         <td>${food_id}</td>
                         <td>${food_name}</td>
                     </tr>`;
-        });
-        $("tbody").append(rows);
-        new DataTable("#myTable");
       });
-    </script>
-  </body>
+      $("tbody").append(rows);
+      new DataTable("#myTable");
+    });
+  </script>
+</body>
+
 </html>

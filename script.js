@@ -42,12 +42,12 @@ menuBar.addEventListener("click", function () {
 //   searchForm.classList.remove("show");
 // }
 
-window.addEventListener("resize", function () {
-  if (this.innerWidth > 576) {
-    searchButtonIcon.classList.replace("bx-x", "bx-search");
-    searchForm.classList.remove("show");
-  }
-});
+// window.addEventListener("resize", function () {
+//   if (this.innerWidth > 576) {
+//     searchButtonIcon.classList.replace("bx-x", "bx-search");
+//     searchForm.classList.remove("show");
+//   }
+// });
 
 // const switchMode = document.getElementById('switch-mode');
 
