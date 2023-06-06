@@ -50,6 +50,12 @@ require_once './_partials/_loginCheck.php';
 					<span class="text">Add Food Item</span>
 				</a>
 			</li>
+			<li title="Add Meal Item">
+				<a href="./add_meal_item.html" target="frame">
+				<i class='bx bxs-food-menu' ></i>
+					<span class="text">Add Meal Item</span>
+				</a>
+			</li>
 			<li title="Food Preference">
 				<a href="./food_pref.html" target="frame">
 					<i class='bx bxs-pizza'></i>
