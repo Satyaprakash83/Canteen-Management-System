@@ -75,19 +75,19 @@ require_once './_partials/_loginCheck.php';
 				</a>
 			</li>
 			<li title="Team">
-				<a href="./teams_page.html" target="frame">
+				<a href="./teams_page.php" target="frame">
 					<i class='bx bxs-group'></i>
 					<span class="text">Team</span>
 				</a>
 			</li>
 		</ul>
 		<ul class="side-menu">
-			<li title="Settings">
+			<!-- <li title="Settings">
 				<a href="#">
 					<i class='bx bxs-cog'></i>
 					<span class="text">Settings</span>
 				</a>
-			</li>
+			</li> -->
 			<li title="Logout">
 				<a href="./logout.php" class="logout">
 					<i class='bx bxs-log-out-circle'></i>

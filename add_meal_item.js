@@ -12,5 +12,5 @@ const foodItem = document.querySelectorAll('#container .food-item');
           
           addMeal.appendChild(div);
         });
-    });  
+});  
 
