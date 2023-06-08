@@ -1,5 +1,7 @@
 <?php
 include "./_partials/_connect.php";
+require_once './_partials/_loginCheck.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +16,6 @@ include "./_partials/_connect.php";
     <!-- jQuery -->
     <script src="./jQuery/jquery-3.7.0.js"></script>
 
-    <!-- font-awsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <!-- custom -->
     <link rel="stylesheet" href="./add_meal_item.css">
     <script src="./add_meal_item.js" defer></script>
@@ -28,22 +26,22 @@ include "./_partials/_connect.php";
     <header>
         <h1>Add Meal Item</h1>
     </header>
-    <div class="select-food container" id="selectFood">
-        <div class="add-meal" id="addMeal"></div>
-        <select name="" id="">
-        <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
+    <section class="select-food container" id="selectFood">
+        <div class="add-meal" id="selected_food"></div>
+        <select class="meal_catagory" id="meal_catagory">
+            <option value="1">Breakfast</option>
+            <option value="2">Lunch</option>
+            <option value="3">Dinner</option>
         </select>
-        <select name="" id="">
-            <option value="Veg">Veg</option>
-            <option value="Non-veg">Non-Veg</option>
+        <select class="meal_type" id="meal_type">
+            <option value="0">Veg</option>
+            <option value="1">Non-Veg</option>
         </select>
-        <div class="btn">
-            <button type="submit">Add</button>
+        <div class="btn" id="submit_btn">
+            <button type="submit">Add Meal</button>
         </div>
-    </div>
-    <div class="container" id="container">
+    </section>
+    <section class="container" id="all_food">
         <?php
         $qry = "SELECT * from `food_items`";
         $result = mysqli_query($connection, $qry);
@@ -52,14 +50,14 @@ include "./_partials/_connect.php";
             <?php
             while ($data = mysqli_fetch_assoc($result)) {
             ?>
-                <div class="food-item" id="foodItem">
-                    <?php echo $data['food_name'] ?><button> &Cross; </button>
+                <div class="food-item" id="<?php echo $data['food_id'] ?>">
+                    <?php echo $data['food_name']; ?><button id="remove_btn"> &Cross; </button>
                 </div>
         <?php
             }
         }
         ?>
-    </div>
+    </section>
 </body>
 
 </html>

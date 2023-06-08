@@ -1,3 +1,4 @@
+//submiting user preference data
 const submitBtn = document.querySelector(".submit-food-pref .submit-data");
 submitBtn.addEventListener("click", () => {
   const preferenceList = {
@@ -11,8 +12,8 @@ submitBtn.addEventListener("click", () => {
   };
   [...document.querySelectorAll(" .select-food")]
     .map((element) => {
-      if (element.value === "Veg") return 1;
-      return 0;
+      if (element.value === "Veg") return 0;
+      return 1;
     })
     .forEach((element, index) => {
       switch (index % 7) {
@@ -39,11 +40,14 @@ submitBtn.addEventListener("click", () => {
         case 5:
           preferenceList["Saturday"].push(element);
           break;
-          
+
         case 6:
           preferenceList["Sunday"].push(element);
           break;
       }
     });
-    console.table(preferenceList);
+
+  $.post("./update_food_preference.php", { preferenceList }, (response) => {
+    alert(response);
+  });
 });

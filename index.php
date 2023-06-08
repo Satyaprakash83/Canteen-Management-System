@@ -52,12 +52,12 @@ require_once './_partials/_loginCheck.php';
 			</li>
 			<li title="Add Meal Item">
 				<a href="./add_meal_item.php" target="frame">
-				<i class='bx bxs-food-menu' ></i>
+					<i class='bx bxs-food-menu'></i>
 					<span class="text">Add Meal Item</span>
 				</a>
 			</li>
 			<li title="Food Preference">
-				<a href="./food_pref.html" target="frame">
+				<a href="./food_pref.php" target="frame">
 					<i class='bx bxs-pizza'></i>
 					<span class="text">Food Preference</span>
 				</a>
@@ -126,7 +126,7 @@ require_once './_partials/_loginCheck.php';
 
 		<!-- MAIN -->
 		<main>
-			<iframe src="./dashboard.php" class="frame" name="frame" frameborder="0" sandbox="allow-scripts allow-same-origin"></iframe>
+			<iframe src="./dashboard.php" class="frame" name="frame" frameborder="0" sandbox="allow-scripts allow-same-origin allow-modals"></iframe>
 		</main>
 		<!-- MAIN -->
 	</section>
