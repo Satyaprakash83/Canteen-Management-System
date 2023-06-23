@@ -7,3 +7,4 @@ if (mysqli_query($connection, $qry)) {
 } else {
     echo mysqli_error($connection);
 }
+?>

@@ -19,7 +19,7 @@ require_once './_partials/_loginCheck.php';
 	<script src="script.js" defer></script>
 
 
-	<title>AdminHub</title>
+	<title>Canteen</title>
 </head>
 
 <body>
@@ -60,6 +60,12 @@ require_once './_partials/_loginCheck.php';
 				<a href="./food_pref.html" target="frame">
 					<i class='bx bxs-pizza'></i>
 					<span class="text">Food Preference</span>
+				</a>
+			</li>
+			<li title="Food Preference">
+				<a href="./review.php" target="frame">
+				<i class='bx bxs-pencil'></i>
+					<span class="text">Review</span>
 				</a>
 			</li>
 			<li title="Analytics">

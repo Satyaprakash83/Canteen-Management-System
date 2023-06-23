@@ -56,3 +56,4 @@ if ($memberData !== null) {
 
 
 header("location:./requestDelete.php?id=$id");
+?>
