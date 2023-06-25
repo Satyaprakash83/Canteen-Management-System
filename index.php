@@ -32,62 +32,84 @@ require_once './_partials/_loginCheck.php';
 			<span class="text">Canteen</span>
 		</a>
 		<ul class="side-menu top">
-			<li class="active" title="Dashboard">
-				<a href="dashboard.php" target="frame">
-					<i class='bx bxs-dashboard'></i>
-					<span class="text">Dashboard</span>
-				</a>
-			</li>
-			<li title="Leave Apply">
-				<a href="./apply_leave.html" target="frame">
-					<i class='bx bxs-notepad'></i>
-					<span class="text">Leave Apply</span>
-				</a>
-			</li>
-			<li title="Add Food Item">
-				<a href="./add_food_item.html" target="frame">
-					<i class='bx bx-food-tag'></i>
-					<span class="text">Add Food Item</span>
-				</a>
-			</li>
-			<li title="Add Meal Item">
-				<a href="./add_meal_item.php" target="frame">
-					<i class='bx bxs-food-menu'></i>
-					<span class="text">Add Meal Item</span>
-				</a>
-			</li>
-			<li title="Food Preference">
-				<a href="./food_pref.php" target="frame">
-					<i class='bx bxs-pizza'></i>
-					<span class="text">Food Preference</span>
-				</a>
-			</li>
-			<li title="Analytics">
-				<a href="#" target="frame">
-					<i class='bx bxs-doughnut-chart'></i>
-					<span class="text">Analytics</span>
-				</a>
-			</li>
-			<li title="Message">
-				<a href="#" target="frame">
-					<i class='bx bxs-message-dots'></i>
-					<span class="text">Message</span>
-				</a>
-			</li>
-			<li title="Team">
-				<a href="./teams_page.html" target="frame">
-					<i class='bx bxs-group'></i>
-					<span class="text">Team</span>
-				</a>
-			</li>
+			<?php
+			if ($_SESSION['user_type'] === 'ADMIN') {
+			?>
+				<li class="active" title="Dashboard">
+					<a href="dashboard.php" target="frame">
+						<i class='bx bxs-dashboard'></i>
+						<span class="text">Dashboard</span>
+					</a>
+				</li>
+				<li title="Add Food Item">
+					<a href="./add_food_item.html" target="frame">
+						<i class='bx bx-food-tag'></i>
+						<span class="text">Add Food Item</span>
+					</a>
+				</li>
+				<li title="Add Meal Item">
+					<a href="./add_meal_item.php" target="frame">
+						<i class='bx bxs-food-menu'></i>
+						<span class="text">Add Meal Item</span>
+					</a>
+				</li>
+				<li title="Update Menu">
+					<a href="./menu_setup/setup_menu.php" target="frame">
+						<i class='bx bx-notepad'></i>
+						<span class="text">Update Menu</span>
+					</a>
+				</li>
+				<li title="Analytics">
+					<a href="#" target="frame">
+						<i class='bx bxs-doughnut-chart'></i>
+						<span class="text">Analytics</span>
+					</a>
+				</li>
+			<?php
+			} elseif ($_SESSION['user_type'] === 'STUDENT' || $_SESSION['user_type'] === 'FACULTY') {
+
+			?>
+				<li class="active" title="Dashboard">
+					<a href="./student_dashboard/student_dashboard.php" target="frame">
+						<i class='bx bxs-dashboard'></i>
+						<span class="text">Dashboard</span>
+					</a>
+				</li>
+				<li title="Leave Apply">
+					<a href="./apply_leave.html" target="frame">
+						<i class='bx bxs-notepad'></i>
+						<span class="text">Leave Apply</span>
+					</a>
+				</li>
+				<li title="Food Preference">
+					<a href="./food_pref.php" target="frame">
+						<i class='bx bxs-pizza'></i>
+						<span class="text">Food Preference</span>
+					</a>
+				</li>
+				<li title="Message">
+					<a href="#" target="frame">
+						<i class='bx bxs-message-dots'></i>
+						<span class="text">Message</span>
+					</a>
+				</li>
+				<li title="Team">
+					<a href="./teams_page.html" target="frame">
+						<i class='bx bxs-group'></i>
+						<span class="text">Team</span>
+					</a>
+				</li>
+			<?php
+			}
+			?>
 		</ul>
 		<ul class="side-menu">
-			<li title="Settings">
+			<!-- <li title="Settings">
 				<a href="#">
 					<i class='bx bxs-cog'></i>
 					<span class="text">Settings</span>
 				</a>
-			</li>
+			</li> -->
 			<li title="Logout">
 				<a href="./logout.php" class="logout">
 					<i class='bx bxs-log-out-circle'></i>
@@ -126,7 +148,14 @@ require_once './_partials/_loginCheck.php';
 
 		<!-- MAIN -->
 		<main>
-			<iframe src="./dashboard.php" class="frame" name="frame" frameborder="0" sandbox="allow-scripts allow-same-origin allow-modals"></iframe>
+			<?php
+			if ($_SESSION['user_type'] === 'ADMIN') {
+				$iframeSrc = './dashboard.php';
+			} else {
+				$iframeSrc = './student_dashboard/student_dashboard.php';
+			}
+			?>
+			<iframe src="<?php echo $iframeSrc; ?>" class="frame" name="frame" frameborder="0" sandbox="allow-scripts allow-same-origin allow-modals"></iframe>
 		</main>
 		<!-- MAIN -->
 	</section>
