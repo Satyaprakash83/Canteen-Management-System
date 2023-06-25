@@ -11,6 +11,11 @@ require_once './_partials/_loginCheck.php';
 
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 	<!-- jQuery -->
@@ -19,7 +24,7 @@ require_once './_partials/_loginCheck.php';
 	<script src="script.js" defer></script>
 
 
-	<title>AdminHub</title>
+	<title>Canteen</title>
 </head>
 
 <body>
@@ -28,8 +33,9 @@ require_once './_partials/_loginCheck.php';
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">Canteen</span>
+			<!-- <i class='bx bxs-smile'></i> -->
+			<i class="fa-solid fa-utensils fa-lg" style="color: #1669f8; padding: 0 20px;"></i>
+			<span class="text" style="font-size: xx-large;color: #1669f8;">Canteen</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active" title="Dashboard">
@@ -62,32 +68,32 @@ require_once './_partials/_loginCheck.php';
 					<span class="text">Food Preference</span>
 				</a>
 			</li>
+			<li title="Food Preference">
+				<a href="./review.php" target="frame">
+					<i class='bx bxs-pencil'></i>
+					<span class="text">Review</span>
+				</a>
+			</li>
 			<li title="Analytics">
 				<a href="#" target="frame">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Analytics</span>
 				</a>
 			</li>
-			<li title="Message">
-				<a href="#" target="frame">
-					<i class='bx bxs-message-dots'></i>
-					<span class="text">Message</span>
-				</a>
-			</li>
 			<li title="Team">
-				<a href="./teams_page.html" target="frame">
+				<a href="./teams_page.php" target="frame">
 					<i class='bx bxs-group'></i>
 					<span class="text">Team</span>
 				</a>
 			</li>
 		</ul>
 		<ul class="side-menu">
-			<li title="Settings">
+			<!-- <li title="Settings">
 				<a href="#">
 					<i class='bx bxs-cog'></i>
 					<span class="text">Settings</span>
 				</a>
-			</li>
+			</li> -->
 			<li title="Logout">
 				<a href="./logout.php" class="logout">
 					<i class='bx bxs-log-out-circle'></i>
