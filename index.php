@@ -66,7 +66,7 @@ require_once './_partials/_loginCheck.php';
 					</a>
 				</li>
 				<li title="Analytics">
-					<a href="#" target="frame">
+					<a href="./food_chart.php" target="frame">
 						<i class='bx bxs-doughnut-chart'></i>
 						<span class="text">Analytics</span>
 					</a>
@@ -93,21 +93,22 @@ require_once './_partials/_loginCheck.php';
 						<span class="text">Food Preference</span>
 					</a>
 				</li>
-				<li title="Message">
-					<a href="#" target="frame">
+				<li title="Reviews">
+					<a href="./review.php" target="frame">
 						<i class='bx bxs-message-dots'></i>
-						<span class="text">Message</span>
+						<span class="text">Reviews</span>
 					</a>
 				</li>
-				<li title="Team">
-					<a href="./teams_page.html" target="frame">
-						<i class='bx bxs-group'></i>
-						<span class="text">Team</span>
-					</a>
-				</li>
+
 			<?php
 			}
 			?>
+			<li title="Team">
+				<a href="./teams_page.php" target="frame">
+					<i class='bx bxs-group'></i>
+					<span class="text">Team</span>
+				</a>
+			</li>
 		</ul>
 		<ul class="side-menu">
 			<!-- <li title="Settings">

@@ -31,7 +31,7 @@ require_once "./_partials/_loginCheck.php";
             while ($data = mysqli_fetch_assoc($result)) {
         ?>
                 <div class="team-member">
-                    <img src="./images/<?php echo $data['image_name'] ?>" alt="member-1">
+                    <img src="./images/<?php echo $data['image_name']; ?>" alt="member-1">
                     <h4><?php echo $data['name']; ?></h4>
                     <p>Phone: <?php echo $data['phone']; ?></p>
                 </div>
@@ -43,7 +43,7 @@ require_once "./_partials/_loginCheck.php";
     </div>
     <?php
     if ($_SESSION['user_type'] === 'ADMIN') {
-        include_once "./add_members.php";
+        include "./add_members.php";
     }
     ?>
 
