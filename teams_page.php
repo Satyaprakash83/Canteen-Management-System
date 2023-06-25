@@ -1,5 +1,7 @@
 <?php
-include "./_partials/_connect.php";
+require_once "./_partials/_connect.php";
+require_once "./_partials/_loginCheck.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +31,9 @@ include "./_partials/_connect.php";
             while ($data = mysqli_fetch_assoc($result)) {
         ?>
                 <div class="team-member">
-                    <img src="./images/<?php echo $data['image_name']?>" alt="member-1">
-                    <h4><?php echo $data['name'];?></h4>
-                    <p>Phone: <?php echo $data['phone'];?></p>
+                    <img src="./images/<?php echo $data['image_name'] ?>" alt="member-1">
+                    <h4><?php echo $data['name']; ?></h4>
+                    <p>Phone: <?php echo $data['phone']; ?></p>
                 </div>
 
         <?php
@@ -40,7 +42,9 @@ include "./_partials/_connect.php";
         ?>
     </div>
     <?php
-        include "./add_members.php";
+    if ($_SESSION['user_type'] === 'ADMIN') {
+        include_once "./add_members.php";
+    }
     ?>
 
 </body>

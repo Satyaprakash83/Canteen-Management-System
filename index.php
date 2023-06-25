@@ -14,7 +14,7 @@ require_once './_partials/_loginCheck.php';
 
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	
+
 
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
@@ -50,18 +50,18 @@ require_once './_partials/_loginCheck.php';
 					<span class="text">Leave Apply</span>
 				</a>
 			</li>
-			<!-- <li title="Add Food Item">
+			<li title="Add Food Item">
 				<a href="./add_food_item.html" target="frame">
 					<i class='bx bx-food-tag'></i>
 					<span class="text">Add Food Item</span>
 				</a>
-			</li> -->
-			<!-- <li title="Add Meal Item">
+			</li>
+			<li title="Add Meal Item">
 				<a href="./add_meal_item.php" target="frame">
-				<i class='bx bxs-food-menu' ></i>
+					<i class='bx bxs-food-menu'></i>
 					<span class="text">Add Meal Item</span>
 				</a>
-			</li> -->
+			</li>
 			<li title="Food Preference">
 				<a href="./food_pref.html" target="frame">
 					<i class='bx bxs-pizza'></i>
@@ -70,22 +70,16 @@ require_once './_partials/_loginCheck.php';
 			</li>
 			<li title="Food Preference">
 				<a href="./review.php" target="frame">
-				<i class='bx bxs-pencil'></i>
+					<i class='bx bxs-pencil'></i>
 					<span class="text">Review</span>
 				</a>
 			</li>
-			<!-- <li title="Analytics">
+			<li title="Analytics">
 				<a href="#" target="frame">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Analytics</span>
 				</a>
-			</li> -->
-			<!-- <li title="Message">
-				<a href="#" target="frame">
-					<i class='bx bxs-message-dots'></i>
-					<span class="text">Message</span>
-				</a>
-			</li> -->
+			</li>
 			<li title="Team">
 				<a href="./teams_page.php" target="frame">
 					<i class='bx bxs-group'></i>
