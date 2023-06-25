@@ -11,6 +11,11 @@ require_once './_partials/_loginCheck.php';
 
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 	<!-- jQuery -->
@@ -28,8 +33,9 @@ require_once './_partials/_loginCheck.php';
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">Canteen</span>
+			<!-- <i class='bx bxs-smile'></i> -->
+			<i class="fa-solid fa-utensils fa-lg" style="color: #1669f8; padding: 0 20px;"></i>
+			<span class="text" style="font-size: xx-large;color: #1669f8;">Canteen</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active" title="Dashboard">
@@ -44,18 +50,18 @@ require_once './_partials/_loginCheck.php';
 					<span class="text">Leave Apply</span>
 				</a>
 			</li>
-			<li title="Add Food Item">
+			<!-- <li title="Add Food Item">
 				<a href="./add_food_item.html" target="frame">
 					<i class='bx bx-food-tag'></i>
 					<span class="text">Add Food Item</span>
 				</a>
-			</li>
-			<li title="Add Meal Item">
+			</li> -->
+			<!-- <li title="Add Meal Item">
 				<a href="./add_meal_item.php" target="frame">
 				<i class='bx bxs-food-menu' ></i>
 					<span class="text">Add Meal Item</span>
 				</a>
-			</li>
+			</li> -->
 			<li title="Food Preference">
 				<a href="./food_pref.html" target="frame">
 					<i class='bx bxs-pizza'></i>
@@ -68,18 +74,18 @@ require_once './_partials/_loginCheck.php';
 					<span class="text">Review</span>
 				</a>
 			</li>
-			<li title="Analytics">
+			<!-- <li title="Analytics">
 				<a href="#" target="frame">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Analytics</span>
 				</a>
-			</li>
-			<li title="Message">
+			</li> -->
+			<!-- <li title="Message">
 				<a href="#" target="frame">
 					<i class='bx bxs-message-dots'></i>
 					<span class="text">Message</span>
 				</a>
-			</li>
+			</li> -->
 			<li title="Team">
 				<a href="./teams_page.php" target="frame">
 					<i class='bx bxs-group'></i>

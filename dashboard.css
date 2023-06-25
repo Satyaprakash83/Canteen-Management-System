@@ -59,7 +59,7 @@ body {
 }
 
 .container li {
-  padding: 1em 4em;
+  padding: 1em 3em;
   background-color: var(--light);
   display: flex;
   align-items: center;

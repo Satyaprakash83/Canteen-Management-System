@@ -10,9 +10,10 @@ include "./_partials/_connect.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <!-- font awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <!-- custom css -->
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
@@ -21,18 +22,21 @@ include "./_partials/_connect.php";
     </div>
     <ul class="container">
         <li>
+        <i class="fa-solid fa-user-tie fa-5x" style="color: #11151d;padding: 0 0.5em 0 0"></i>
             <span class="card">
                 <h3>30</h3>
                 <p>Total Staff</p>
             </span>
         </li>
         <li>
+        <i class="fa-solid fa-users  fa-5x" style="color: #11151d;padding: 0 0.5em 0 0"></i>
             <span class="card">
                 <h3>3000</h3>
                 <p>Total Student</p>
             </span>
         </li>
         <li>
+            <i class="fa-solid fa-bowl-rice fa-5x" style="color: #11151d;padding: 0 0.5em 0 0"></i>
             <span class="card">
                 <h3>35</h3>
                 <p>Total Food Item</p>
